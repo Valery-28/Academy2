@@ -1,7 +1,5 @@
 package HomeWork1;
 
-import java.util.Arrays;
-
 /*
 Задание 6
 Даны две квадратные матрицы. Необходимо написать программу которая посчитает их
@@ -28,6 +26,7 @@ public class Task6 {
             System.out.println();
 
         }
+        System.out.println();
         System.out.println("Sum: ");
         for (i = 0; i < array2.length; i++) {
             for (j = 0; j < array2.length; j++) {
