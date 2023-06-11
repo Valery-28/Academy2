@@ -17,7 +17,7 @@ public class Main {
         ServiceCar serviceCar = new ServiceCar();
         ArrayList<Car> cars = new ArrayList<>();
         Stock stock = new Stock(cars);
-        FactoryCar factoryCar = new FactoryCar(stock,2023);
+        FactoryCar factoryCar = new FactoryCar(stock, 2023);
 
 
         cars.add(factoryCar.create(ModelCar.CHEVROLET, CoralCar.PURPLE, EngineCapasity.STANDARD,
@@ -58,7 +58,7 @@ public class Main {
         System.out.println("Create salon Car3" + car3);
         System.out.println("Create salon Car4" + car4);
         System.out.println();
-        System.out.println("STOKE"+stock.getStoke());
+        System.out.println("STOKE" + stock.getStoke());
 
         salonCar.getServiceCar().changeWheel(car1, SizeWheel.R17);
         salonCar.getServiceCar().editCarColor(car3, CoralCar.ORANGE);

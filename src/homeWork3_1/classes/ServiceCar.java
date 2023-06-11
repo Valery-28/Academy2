@@ -14,18 +14,18 @@ public class ServiceCar {
     }
 
     public void changeWheel(Car car, SizeWheel sizeWheel) {
-        if(sizeWheel != null && sizeWheel !=car.getSizeWheel()) {
+        if (sizeWheel != null && sizeWheel != car.getSizeWheel()) {
             car.setSizeWheel(sizeWheel);
         }
     }
 
     public void addOption(Car car, String options) {
-            car.getOptions().add(options);
-        
+        car.getOptions().add(options);
+
     }
 
     public void deleteOption(Car car, String options) {
-            car.getOptions().remove(options);
+        car.getOptions().remove(options);
 
     }
 

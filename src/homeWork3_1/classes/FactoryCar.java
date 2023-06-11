@@ -29,7 +29,7 @@ public class FactoryCar implements CreateCar {
         );
     }
 
-    public FactoryCar(Stock stock,int YEAR_RELEASE) {
+    public FactoryCar(Stock stock, int YEAR_RELEASE) {
         this.stock = stock;
         this.YEAR_RELEASE = YEAR_RELEASE;
     }

@@ -19,7 +19,7 @@ public class Stock {
         for (Car stokeCar : stoke) {
             if (car.equals(stokeCar)) {
                 calculateCoef(car, stokeCar);
-                if (calculateCoef(car, stokeCar)==getMaxCoefficient(car, stokeCar)) {
+                if (calculateCoef(car, stokeCar) == getMaxCoefficient(car, stokeCar)) {
                     resultCar = car;
                     stoke.remove(resultCar);
                     resultCar.setColorCar(car.getColorCar());

@@ -14,7 +14,7 @@ public class Car {
     private CoralCar colorCar;
     private final EngineCapasity engineCapasity;
     private SizeWheel sizeWheel;
-    private Set<String> options ;
+    private Set<String> options;
 
     public Car(ModelCar modelCar, CoralCar colorCar, EngineCapasity engineCapasity,
                SizeWheel sizeWheel, Set<String> options) {
@@ -22,7 +22,7 @@ public class Car {
         this.colorCar = colorCar;
         this.engineCapasity = engineCapasity;
         this.sizeWheel = sizeWheel;
-        this.options= options;
+        this.options = options;
     }
 
     @Override
@@ -52,9 +52,9 @@ public class Car {
     }
 
     public Set<String> getOptions() {
-        if(options!=null) {
+        if (options != null) {
             return options;
-        }else{
+        } else {
             return new HashSet<>(Set.of());
         }
     }
