@@ -1,83 +1,79 @@
 package homeWork3_1;
 
-import homeWork3_1.classes.Car;
-import homeWork3_1.classes.FactoryCar;
-import homeWork3_1.classes.SalonCar;
-import homeWork3_1.classes.ServiceCar;
+import homeWork3_1.classes.*;
 import homeWork3_1.enums.CoralCar;
 import homeWork3_1.enums.EngineCapasity;
 import homeWork3_1.enums.ModelCar;
 import homeWork3_1.enums.SizeWheel;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class Main {
     public static void main(String[] args) {
+
         ServiceCar serviceCar = new ServiceCar();
-        FactoryCar factoryCar = new FactoryCar();
+        ArrayList<Car> cars = new ArrayList<>();
+        Stock stock = new Stock(cars);
+        FactoryCar factoryCar = new FactoryCar(stock,2023);
+
+
+        cars.add(factoryCar.create(ModelCar.CHEVROLET, CoralCar.PURPLE, EngineCapasity.STANDARD,
+                SizeWheel.R16, new HashSet<>(Set.of("Rain, sensor", "Light sensor", "Climate control"))));
+        cars.add(factoryCar.create(ModelCar.AUDI, CoralCar.WHITE, EngineCapasity.STANDARD,
+                SizeWheel.R15, new HashSet<>(Set.of("Climate control", "Patronymic"))));
+        cars.add(factoryCar.create(ModelCar.BMW, CoralCar.WHITE, EngineCapasity.BIG,
+                SizeWheel.R16, null));
+
         SalonCar salonCar = new SalonCar(factoryCar, serviceCar);
 
         factoryCar.print();
 
-        factoryCar.create(ModelCar.AUDI, CoralCar.BLUE, EngineCapasity.BIG,
-                SizeWheel.R17, 2020, new ArrayList<>(Arrays.asList("option1", "option2")));
-        factoryCar.create(ModelCar.BMW, CoralCar.BLUE, EngineCapasity.BIG,
-                SizeWheel.R17, 2021, new ArrayList<>());
-        factoryCar.create(ModelCar.CHEVROLET, CoralCar.PURPLE, EngineCapasity.STANDARD,
-                SizeWheel.R16, 2017, new ArrayList<>(List.of("option1")));
+        System.out.println("All models year release: " + factoryCar.getYEAR_RELEASE());
+        System.out.println(stock.getStoke());
+        System.out.println();
         System.out.println("We have the following vehicles in stock:");
 
-        System.out.println(factoryCar.getStock());
+        serviceCar.deleteOption(stock.getStoke().get(0), "Rain sensor");
+        serviceCar.setOptions(stock.getStoke().get(2), new HashSet<>(Set.of("Climate control", "Patronymic")));
+        serviceCar.editCarColor(stock.getStoke().get(0), CoralCar.ORANGE);
+        System.out.println(stock.getStoke());
 
-        serviceCar.addOption(factoryCar.getStock().get(1), "option1");
-        serviceCar.deleteOption(factoryCar.getStock().get(0), "option1");
-        serviceCar.setOptions(factoryCar.getStock().get(2), new ArrayList<>(List.of("option3")));
-        serviceCar.editCarColor(factoryCar.getStock().get(0), CoralCar.GREEN);
-        serviceCar.changeWheel(factoryCar.getStock().get(2), SizeWheel.R15);
+        Car car1 = salonCar.sellCar(ModelCar.BMW, CoralCar.BLACK, EngineCapasity.BIG,
+                SizeWheel.R19, new HashSet<>(Set.of("Rain, sensor", "Light sensor", "Climate control")));
+        Car car2 = salonCar.sellCar(ModelCar.SKODA, CoralCar.GREEN, EngineCapasity.STANDARD,
+                SizeWheel.R15, null);
+        Car car3 = salonCar.sellCar(ModelCar.CHEVROLET, CoralCar.ORANGE, EngineCapasity.STANDARD,
+                SizeWheel.R15, new HashSet<>(Set.of("Rain, sensor", "Light sensor", "Climate control")));
+        Car car4 = salonCar.sellCar(ModelCar.AUDI, CoralCar.RED, EngineCapasity.STANDARD,
+                SizeWheel.R17, new HashSet<>(Set.of("Standard function")));
+
 
         System.out.println();
-        System.out.println("Change stoke: ");
-        System.out.println(factoryCar.getStock());
         System.out.println();
-
-        Car car1 = salonCar.sellCar(ModelCar.PEUGEOT, CoralCar.PURPLE, EngineCapasity.STANDARD,
-                SizeWheel.R18, 2023, new ArrayList<>(Arrays.asList("option4", "option5")));
-        Car car2 = salonCar.sellCar(ModelCar.CHEVROLET, CoralCar.PURPLE, EngineCapasity.STANDARD,
-                SizeWheel.R16, 2017, new ArrayList<>(List.of("option1")));
-        Car car3 = salonCar.sellCar(ModelCar.AUDI, CoralCar.WHITE, EngineCapasity.STANDARD,
-                SizeWheel.R19, 2020, new ArrayList<>(List.of()));
-        Car car4 = salonCar.sellCar(ModelCar.AUDI, CoralCar.WHITE, EngineCapasity.BIG,
-                SizeWheel.R19, 2020, new ArrayList<>(List.of()));
-
         System.out.println("Create salon Car1" + car1);
-        System.out.println();
         System.out.println("Create salon Car2" + car2);
-        System.out.println();
         System.out.println("Create salon Car3" + car3);
-        System.out.println();
         System.out.println("Create salon Car4" + car4);
         System.out.println();
+        System.out.println("STOKE"+stock.getStoke());
 
-        salonCar.changeWheel(car2, SizeWheel.R15);
-        salonCar.editCarColor(car3, CoralCar.ORANGE);
-        salonCar.deleteOption(car2, "option1");
-        salonCar.addOption(car2, "options33");
-        salonCar.addOption(car3, "options24");
-        salonCar.setOptions(car1, new ArrayList<>(List.of("Options23")));
+        salonCar.getServiceCar().changeWheel(car1, SizeWheel.R17);
+        salonCar.getServiceCar().editCarColor(car3, CoralCar.ORANGE);
+        salonCar.getServiceCar().deleteOption(car2, "Climate control");
+        salonCar.getServiceCar().addOption(car2, "options33");
+        salonCar.getServiceCar().addOption(car3, "options24");
+        salonCar.getServiceCar().setOptions(car1, new HashSet<>(Set.of("Climate control", "Patronymic")));
+        salonCar.getServiceCar().editCarColor(car1, CoralCar.YELOW);
 
-        System.out.println("Change salon car1" + car1);
+
         System.out.println();
+        System.out.println("Change service car1" + car1);
         System.out.println("Change salon car2" + car2);
-        System.out.println();
         System.out.println("change salon car3" + car3);
-        System.out.println();
         System.out.println("Change salon car4" + car4);
         System.out.println();
-
-        System.out.println("Change stoke" + factoryCar.getStock());
-
     }
 }

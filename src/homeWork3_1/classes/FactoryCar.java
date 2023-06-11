@@ -7,90 +7,55 @@ import homeWork3_1.enums.ModelCar;
 import homeWork3_1.enums.SizeWheel;
 import homeWork3_1.interfaces.CreateCar;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Set;
 
 public class FactoryCar implements CreateCar {
+
+    final int YEAR_RELEASE;
     private final ModelCar[] allModelCar = ModelCar.values();
     private final CoralCar[] allCoralCar = CoralCar.values();
-    private final EngineCapacity[] allEngineCapasity = EngineCapacity.values();
+    private final EngineCapacity[] allEngineCapacity = EngineCapacity.values();
     private final SizeWheel[] allSizeWheel = SizeWheel.values();
-    private final ArrayList<Car> stock = new ArrayList<>();
+    private final Stock stock;
+
 
     public void print() {
         System.out.printf("Available car brands: %s\nAvailable colors: %s\nAvailable engine size: %s\nAvailable wheel size: %s\n",
                 Arrays.toString(allModelCar),
                 Arrays.toString(allCoralCar),
-                Arrays.toString(allEngineCapasity),
+                Arrays.toString(allEngineCapacity),
                 Arrays.toString(allSizeWheel)
         );
     }
 
+    public FactoryCar(Stock stock,int YEAR_RELEASE) {
+        this.stock = stock;
+        this.YEAR_RELEASE = YEAR_RELEASE;
+    }
+
+    public int getYEAR_RELEASE() {
+        return YEAR_RELEASE;
+    }
+
     public Car create(ModelCar modelCar, CoralCar colorCar, EngineCapasity engineCapasity,
-                      SizeWheel sizeWheel, Integer yearRelease, ArrayList<String> options) {
+                      SizeWheel sizeWheel, Set<String> options) {
+        Car car = new Car(modelCar, colorCar, engineCapasity, sizeWheel, options);
 
-        Car create = new Car(modelCar, colorCar, engineCapasity, sizeWheel, yearRelease, options);
-
-        stock.add(create);
-        return create;
+        if (stock.findCar(car) != null) {
+            return car;
+        }
+        return new Car(modelCar, colorCar, engineCapasity, sizeWheel, options);
     }
 
-    public Car createForSalon(ModelCar modelCar, CoralCar colorCar, EngineCapasity engineCapasity,
-                              SizeWheel sizeWheel, Integer yearRelease, ArrayList<String> options) {
 
-        Car create = new Car(modelCar, colorCar, engineCapasity, sizeWheel, yearRelease, options);
-
-
-        int compareCoef = -1;
-        Car resultCar = null;
-
-        for (Car car : stock) {
-            if (compareCoef < compareCar(create, car)) {
-                compareCoef = compareCar(create, car);
-                resultCar = car;
-            }
-        }
-
-        if (compareCoef > -1) {
-            stock.remove(resultCar);
-            resultCar.setColarCar(colorCar);
-            resultCar.setSizeWheel(sizeWheel);
-            resultCar.setOptions(options);
-            return resultCar;
-        }
-
-        return create;
+    @Override
+    public String toString() {
+        return "Year release: " + YEAR_RELEASE;
     }
 
-    private int compareCar(Car car1, Car car2) {
-        int count = 0;
-
-        if (!car1.getYearRelease().equals(car2.getYearRelease())) {
-            return -1;
-        }
-
-        if (!car1.getModelCar().equals(car2.getModelCar())) {
-            return -1;
-        }
-        if (!car1.getEngineCapasity().equals(car2.getEngineCapasity())) {
-            return -1;
-        }
-
-        if (car1.getColarCar().equals(car2.getColarCar())) {
-            count++;
-        }
-        if (car1.getOptions().equals(car2.getOptions())) {
-            count++;
-        }
-        if (car1.getSizeWheel().equals(car2.getSizeWheel())) {
-            count++;
-        }
-
-        return count;
-
-    }
-
-    public ArrayList<Car> getStock() {
-        return stock;
+    public Car create(FactoryCar car) {
+        return null;
     }
 }
+

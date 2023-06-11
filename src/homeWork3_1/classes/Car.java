@@ -5,73 +5,74 @@ import homeWork3_1.enums.EngineCapasity;
 import homeWork3_1.enums.ModelCar;
 import homeWork3_1.enums.SizeWheel;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 public class Car {
     private final ModelCar modelCar;
-    private CoralCar colarCar;
+    private CoralCar colorCar;
     private final EngineCapasity engineCapasity;
     private SizeWheel sizeWheel;
-    private final Integer yearRelease;
-    private ArrayList<String> options = new ArrayList<>();
+    private Set<String> options ;
 
-    public Car(ModelCar modelCar, CoralCar colarCar, EngineCapasity engineCapasity,
-               SizeWheel sizeWheel, Integer yearRelease, ArrayList<String> options) {
+    public Car(ModelCar modelCar, CoralCar colorCar, EngineCapasity engineCapasity,
+               SizeWheel sizeWheel, Set<String> options) {
         this.modelCar = modelCar;
-        this.colarCar = colarCar;
+        this.colorCar = colorCar;
         this.engineCapasity = engineCapasity;
         this.sizeWheel = sizeWheel;
-        this.yearRelease = yearRelease;
-        this.options = options;
+        this.options= options;
     }
 
     @Override
     public String toString() {
         return "\n" + "Model= " + modelCar +
-                ", Colar= " + colarCar +
+                ", Color= " + colorCar +
                 ", Engine size= " + engineCapasity +
                 ", Size Wheel=" + sizeWheel +
-                ", Year release= " + yearRelease +
-                ", options=" + options;
+                ", options=" + getOptions();
     }
 
-    public CoralCar getColarCar() {
-        return colarCar;
+    public CoralCar getColorCar() {
+        return colorCar;
     }
 
-    public ServiceCar setColarCar(CoralCar colarCar) {
-        this.colarCar = colarCar;
-        return null;
+    public void setColorCar(CoralCar colorCar) {
+        this.colorCar = colorCar;
     }
+
 
     public SizeWheel getSizeWheel() {
         return sizeWheel;
     }
 
-    public ServiceCar setSizeWheel(SizeWheel sizeWheel) {
+    public void setSizeWheel(SizeWheel sizeWheel) {
         this.sizeWheel = sizeWheel;
-        return null;
     }
 
-    public ArrayList<String> getOptions() {
-        return options;
+    public Set<String> getOptions() {
+        if(options!=null) {
+            return options;
+        }else{
+            return new HashSet<>(Set.of());
+        }
     }
 
-    public ServiceCar setOptions(ArrayList<String> options) {
+    public void setOptions(Set<String> options) {
         this.options = options;
-        return null;
     }
 
-    public ModelCar getModelCar() {
-        return modelCar;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return modelCar == car.modelCar && engineCapasity == car.engineCapasity;
     }
 
-    public EngineCapasity getEngineCapasity() {
-        return engineCapasity;
+    @Override
+    public int hashCode() {
+        return Objects.hash(modelCar, engineCapasity);
     }
-
-    public Integer getYearRelease() {
-        return yearRelease;
-    }
-
 }
