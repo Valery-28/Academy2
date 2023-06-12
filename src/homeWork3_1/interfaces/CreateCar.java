@@ -1,6 +1,6 @@
 package homeWork3_1.interfaces;
 
-import homeWork3_1.classes.Car;
+import homeWork3_1.classes.object.Car;
 import homeWork3_1.enums.CoralCar;
 import homeWork3_1.enums.EngineCapasity;
 import homeWork3_1.enums.ModelCar;

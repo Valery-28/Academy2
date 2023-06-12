@@ -1,6 +1,7 @@
-package homeWork3_1.classes;
+package homeWork3_1.classes.factory;
 
 import homeWork3.EngineCapacity;
+import homeWork3_1.classes.object.Car;
 import homeWork3_1.enums.CoralCar;
 import homeWork3_1.enums.EngineCapasity;
 import homeWork3_1.enums.ModelCar;
@@ -40,12 +41,10 @@ public class FactoryCar implements CreateCar {
 
     public Car create(ModelCar modelCar, CoralCar colorCar, EngineCapasity engineCapasity,
                       SizeWheel sizeWheel, Set<String> options) {
-        Car car = new Car(modelCar, colorCar, engineCapasity, sizeWheel, options);
+        Car car = new Car(modelCar, colorCar, engineCapasity, sizeWheel, YEAR_RELEASE,options);
 
-        if (stock.findCar(car) != null) {
-            return car;
-        }
-        return new Car(modelCar, colorCar, engineCapasity, sizeWheel, options);
+        stock.findCar(car);
+        return car;
     }
 
 
@@ -54,8 +53,5 @@ public class FactoryCar implements CreateCar {
         return "Year release: " + YEAR_RELEASE;
     }
 
-    public Car create(FactoryCar car) {
-        return null;
-    }
 }
 

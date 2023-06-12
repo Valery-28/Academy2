@@ -1,10 +1,12 @@
-package homeWork3_1.classes;
+package homeWork3_1.classes.services;
 
 
+import homeWork3_1.classes.object.Car;
 import homeWork3_1.enums.CoralCar;
 import homeWork3_1.enums.EngineCapasity;
 import homeWork3_1.enums.ModelCar;
 import homeWork3_1.enums.SizeWheel;
+import homeWork3_1.classes.factory.FactoryCar;
 
 import java.util.Set;
 
@@ -24,7 +26,23 @@ public class SalonCar {
 
     }
 
-    public ServiceCar getServiceCar() {
-        return serviceCar;
+    public void editColor(Car car, CoralCar colorCar) {
+        serviceCar.editCarColor(car, colorCar);
+    }
+
+    public void editSizeWheel(Car car, SizeWheel sizeWheel) {
+        serviceCar.changeWheel(car, sizeWheel);
+    }
+
+    public void addOptionSalon(Car car, String option) {
+        serviceCar.addOption(car, option);
+    }
+
+    public void deleteOptionSalon(Car car, String option) {
+        serviceCar.deleteOption(car, option);
+    }
+
+    public void setOptionSalon(Car car, Set<String> option) {
+        serviceCar.setOptions(car, option);
     }
 }

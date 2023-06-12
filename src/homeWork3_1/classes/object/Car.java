@@ -1,4 +1,4 @@
-package homeWork3_1.classes;
+package homeWork3_1.classes.object;
 
 import homeWork3_1.enums.CoralCar;
 import homeWork3_1.enums.EngineCapasity;
@@ -14,24 +14,29 @@ public class Car {
     private CoralCar colorCar;
     private final EngineCapasity engineCapasity;
     private SizeWheel sizeWheel;
-    private Set<String> options;
+    private final Integer yearRelease;
+    private Set<String> option;
+
 
     public Car(ModelCar modelCar, CoralCar colorCar, EngineCapasity engineCapasity,
-               SizeWheel sizeWheel, Set<String> options) {
+               SizeWheel sizeWheel, Integer yearRelease, Set<String> option) {
         this.modelCar = modelCar;
         this.colorCar = colorCar;
         this.engineCapasity = engineCapasity;
         this.sizeWheel = sizeWheel;
-        this.options = options;
+        this.yearRelease = yearRelease;
+        this.option = Objects.requireNonNullElseGet(option, () -> new HashSet<>(Set.of()));
     }
+
 
     @Override
     public String toString() {
-        return "\n" + "Model= " + modelCar +
-                ", Color= " + colorCar +
-                ", Engine size= " + engineCapasity +
-                ", Size Wheel=" + sizeWheel +
-                ", options=" + getOptions();
+        return "\n" + "Model: " + modelCar +
+                ", Color: " + colorCar +
+                ", Engine size: " + engineCapasity +
+                ", Size Wheel: " + sizeWheel +
+                ", Year release: " + yearRelease +
+                ", options: " + option;
     }
 
     public CoralCar getColorCar() {
@@ -51,16 +56,12 @@ public class Car {
         this.sizeWheel = sizeWheel;
     }
 
-    public Set<String> getOptions() {
-        if (options != null) {
-            return options;
-        } else {
-            return new HashSet<>(Set.of());
-        }
+    public Set<String> getOption() {
+        return option;
     }
 
-    public void setOptions(Set<String> options) {
-        this.options = options;
+    public void setOption(Set<String> option) {
+        this.option = option;
     }
 
     @Override
@@ -68,11 +69,11 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return modelCar == car.modelCar && engineCapasity == car.engineCapasity;
+        return modelCar == car.modelCar && engineCapasity == car.engineCapasity && yearRelease.equals(car.yearRelease);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(modelCar, engineCapasity);
+        return Objects.hash(modelCar, engineCapasity, yearRelease);
     }
 }
