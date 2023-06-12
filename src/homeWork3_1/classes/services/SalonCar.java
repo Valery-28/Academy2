@@ -26,11 +26,11 @@ public class SalonCar {
 
     }
 
-    public void editColor(Car car, CoralCar colorCar) {
+    public void editColorSalon(Car car, CoralCar colorCar) {
         serviceCar.editCarColor(car, colorCar);
     }
 
-    public void editSizeWheel(Car car, SizeWheel sizeWheel) {
+    public void editSizeWheelSalon(Car car, SizeWheel sizeWheel) {
         serviceCar.changeWheel(car, sizeWheel);
     }
 
@@ -44,5 +44,8 @@ public class SalonCar {
 
     public void setOptionSalon(Car car, Set<String> option) {
         serviceCar.setOptions(car, option);
+    }
+    public void factoryStay(){
+        factoryCar.print();
     }
 }

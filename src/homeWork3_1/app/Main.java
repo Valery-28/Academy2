@@ -1,4 +1,4 @@
-package homeWork3_1;
+package homeWork3_1.app;
 
 import homeWork3_1.classes.object.Car;
 import homeWork3_1.classes.services.SalonCar;
@@ -25,6 +25,10 @@ public class Main {
 
         factoryCar.print();
 
+        System.out.println("All models year release: " + factoryCar.getYEAR_RELEASE());
+
+        System.out.println();
+
         cars.add(factoryCar.create(ModelCar.CHEVROLET, CoralCar.PURPLE, EngineCapasity.STANDARD,
                 SizeWheel.R16, new HashSet<>(Set.of("Rain sensor", "Light sensor", "Climate control"))));
         cars.add(factoryCar.create(ModelCar.AUDI, CoralCar.WHITE, EngineCapasity.STANDARD,
@@ -35,8 +39,6 @@ public class Main {
         SalonCar salonCar = new SalonCar(factoryCar, serviceCar);
 
         System.out.println("Stoke:\n" + cars);
-
-        System.out.println("All models year release: " + factoryCar.getYEAR_RELEASE());
 
         System.out.println();
 
@@ -68,13 +70,13 @@ public class Main {
 
         System.out.println("STOKE" + cars);
 
-        salonCar.editSizeWheel(car1, SizeWheel.R17);
-        salonCar.editColor(car3, CoralCar.ORANGE);
+        salonCar.editSizeWheelSalon(car1, SizeWheel.R17);
+        salonCar.editColorSalon(car3, CoralCar.ORANGE);
         salonCar.deleteOptionSalon(car2, "Climate control");
         salonCar.addOptionSalon(car2, "options33");
         salonCar.addOptionSalon(car3, "options24");
         salonCar.setOptionSalon(car1, new HashSet<>(Set.of("Climate control", "Patronymic")));
-        salonCar.editColor(car1, CoralCar.YELOW);
+        salonCar.editColorSalon(car1, CoralCar.YELOW);
 
         System.out.println();
 
@@ -84,5 +86,6 @@ public class Main {
         System.out.println("Change salon car4" + car4);
 
         System.out.println();
+        salonCar.factoryStay();
     }
 }
