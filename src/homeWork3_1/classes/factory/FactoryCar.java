@@ -13,7 +13,7 @@ import java.util.Set;
 
 public class FactoryCar implements CreateCar {
 
-    final int YEAR_RELEASE;
+    final int YEAR_RELEASE=2022;
     private final ModelCar[] allModelCar = ModelCar.values();
     private final CoralCar[] allCoralCar = CoralCar.values();
     private final EngineCapacity[] allEngineCapacity = EngineCapacity.values();
@@ -30,14 +30,10 @@ public class FactoryCar implements CreateCar {
         );
     }
 
-    public FactoryCar(Stock stock, int YEAR_RELEASE) {
+    public FactoryCar(Stock stock) {
         this.stock = stock;
-        this.YEAR_RELEASE = YEAR_RELEASE;
     }
 
-    public int getYEAR_RELEASE() {
-        return YEAR_RELEASE;
-    }
 
     public Car create(ModelCar modelCar, CoralCar colorCar, EngineCapasity engineCapasity,
                       SizeWheel sizeWheel, Set<String> options) {

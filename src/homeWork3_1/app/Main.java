@@ -21,11 +21,9 @@ public class Main {
         ServiceCar serviceCar = new ServiceCar();
         ArrayList<Car> cars = new ArrayList<>();
         Stock stock = new Stock(cars);
-        FactoryCar factoryCar = new FactoryCar(stock, 2023);
+        FactoryCar factoryCar = new FactoryCar(stock);
 
         factoryCar.print();
-
-        System.out.println("All models year release: " + factoryCar.getYEAR_RELEASE());
 
         System.out.println();
 
