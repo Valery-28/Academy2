@@ -40,24 +40,33 @@ public class Matrix {
         System.out.println("Вводим значение первой матрицы:");
         for (int i = 0; i < firstMatrix.length; i++) {
             for (int j = 0; j < firstMatrix[i].length; j++) {
-                firstMatrix[i][j] = scanner.nextInt();
-                System.out.print(firstMatrix[i][j] + " ");
+                if (!scanner.hasNextInt()) {
+                    throw new CustomException("Введи число! ЦЕЛОЕ ЧИСЛО!");
+                } else {
+                    firstMatrix[i][j] = scanner.nextInt();
+                    System.out.print(firstMatrix[i][j] + " ");
+                }
             }
             System.out.println();
         }
         System.out.println("Вводим значение второй матрицы:");
         for (int i = 0; i < secondMatrix.length; i++) {
             for (int j = 0; j < secondMatrix.length; j++) {
-                secondMatrix[i][j] = scanner.nextInt();
-                System.out.print(secondMatrix[i][j] + " ");
+                if (!scanner.hasNextInt()) {
+                    throw new CustomException("Введи число! ЦЕЛОЕ ЧИСЛО!");
+
+                } else {
+                    secondMatrix[i][j] = scanner.nextInt();
+                    System.out.print(secondMatrix[i][j] + " ");
+                }
             }
             System.out.println();
         }
-        sumMatrix(sumMatrix,firstMatrix,secondMatrix);
-        differenceMatrix(subtractionMatrix,firstMatrix,secondMatrix);
+        sumMatrix(sumMatrix, firstMatrix, secondMatrix);
+        differenceMatrix(subtractionMatrix, firstMatrix, secondMatrix);
     }
 
-    public void sumMatrix(int[][] sumMatrix, int[][] firstMatrix, int[][]secondMatrix){
+    public void sumMatrix(int[][] sumMatrix, int[][] firstMatrix, int[][] secondMatrix) {
         System.out.println("Сумма матриц: ");
         for (int i = 0; i < sumMatrix.length; i++) {
             for (int j = 0; j < sumMatrix[i].length; j++) {
@@ -68,7 +77,7 @@ public class Matrix {
         }
     }
 
-    public void differenceMatrix(int[][] subtractionMatrix, int[][] firstMatrix, int[][]secondMatrix ){
+    public void differenceMatrix(int[][] subtractionMatrix, int[][] firstMatrix, int[][] secondMatrix) {
         System.out.println("Разница матриц: ");
         for (int i = 0; i < subtractionMatrix.length; i++) {
             for (int j = 0; j < subtractionMatrix[i].length; j++) {
