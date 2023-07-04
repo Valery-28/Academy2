@@ -1,5 +1,5 @@
-package homeWorks.homeWork3_1.enums;
+package project.buyCar.enums.enumCar;
 
-public enum CoralCar {
+public enum CorolCar {
     RED, YELOW, ORANGE, GREEN, BLUE, PURPLE, BLACK, WHITE
 }
