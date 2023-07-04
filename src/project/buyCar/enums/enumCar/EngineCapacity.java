@@ -6,8 +6,4 @@ public enum EngineCapacity {
     EngineCapacity(double values) {
         this.values=values;
     }
-
-    public double getValues() {
-        return values;
-    }
 }
