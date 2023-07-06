@@ -2,39 +2,43 @@ package project.buyCar.car.parent;
 
 
 import project.buyCar.enums.enumCar.Brand;
-import project.buyCar.enums.enumCar.CorolCar;
-import project.buyCar.enums.enumCar.EngineCapacity;
-import project.buyCar.enums.enumCar.SizeWheel;
+import project.buyCar.interfaces.ColorCar;
+import project.buyCar.interfaces.EngineCapacityCar;
+import project.buyCar.interfaces.ModelCar;
+import project.buyCar.interfaces.SizeWheelCar;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public abstract class Car {
+public abstract class Car implements ModelCar, ColorCar, EngineCapacityCar, SizeWheelCar {
     private final Brand brand;
-    private CorolCar colorCar;
-    private EngineCapacity engineCapacity;
-    private SizeWheel sizeWheel;
+    private final ModelCar modelCar;
+    private final ColorCar colorCar;
+    private final EngineCapacityCar engineCapacityCar;
+    private final  SizeWheelCar sizeWheelCar;
     private final Integer yearRelease;
     private final Set<String> option;
 
 
-    public Car(Brand modelCar, CorolCar colorCar, EngineCapacity engineCapacity,
-               SizeWheel sizeWheel, Integer yearRelease, Set<String> option) {
-        this.brand = modelCar;
-        checkEngineCapacity(engineCapacity);
-        checkColor(colorCar);
-        checkSizeWheel(sizeWheel);
+    public Car(Brand brand,ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar,
+               SizeWheelCar sizeWheelCar, Integer yearRelease, Set<String> option) {
+        this.brand = brand;
+        this.modelCar=modelCar;
+        this.colorCar=colorCar;
+        this.engineCapacityCar=engineCapacityCar;
+        this.sizeWheelCar=sizeWheelCar;
         this.yearRelease = yearRelease;
         this.option = Objects.requireNonNullElseGet(option, () -> new HashSet<>(Set.of()));
     }
 
     @Override
     public String toString() {
-        return ", Brand: " + brand +
+        return "Brand: " + brand +
+                ", Model: " + modelCar +
                 ", Color: " + colorCar +
-                ", Engine size: " + engineCapacity +
-                ", Size Wheel: " + sizeWheel +
+                ", Engine size: " + engineCapacityCar +
+                ", Size Wheel: " + sizeWheelCar +
                 ", Year release: " + yearRelease +
                 ", options: " + option;
     }
@@ -44,36 +48,13 @@ public abstract class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return brand == car.brand && engineCapacity == car.engineCapacity && yearRelease.equals(car.yearRelease);
+        return brand == car.brand && modelCar == car.modelCar
+                && engineCapacityCar == car.engineCapacityCar && yearRelease.equals(car.yearRelease);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, engineCapacity, yearRelease);
-    }
-    public void checkColor(CorolCar colorCar){
-        for (CorolCar c : brand.getColorCars()) {
-            if (c == colorCar) {
-                this.colorCar=colorCar;
-                break;
-            }
-        }
-    }
-    public void checkEngineCapacity(EngineCapacity engineCapacity){
-        for (EngineCapacity c : brand.getEngineCapacities()) {
-            if (c == engineCapacity) {
-                this.engineCapacity = engineCapacity;
-                break;
-            }
-        }
-    }
-    public void checkSizeWheel(SizeWheel sizeWheel){
-        for (SizeWheel c : brand.getSizeWheels()) {
-            if (c == sizeWheel) {
-                this.sizeWheel = sizeWheel;
-                break;
-            }
-        }
+        return Objects.hash(brand ,modelCar, engineCapacityCar, yearRelease);
     }
 
 }
