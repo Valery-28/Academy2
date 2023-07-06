@@ -1,7 +1,11 @@
 package project.buyCar.car.child;
 
 import project.buyCar.car.parent.AbstractCar;
-import project.buyCar.enums.enumAUDI.*;
+import project.buyCar.enums.enumAUDI.ColorCarAUDI;
+import project.buyCar.enums.enumAUDI.DriveForAUDI;
+import project.buyCar.enums.enumAUDI.EngineCapacityAUDI;
+import project.buyCar.enums.enumAUDI.ModelCarAUDI;
+import project.buyCar.enums.enumAUDI.SizeWheelAUDI;
 
 import java.util.Set;
 
