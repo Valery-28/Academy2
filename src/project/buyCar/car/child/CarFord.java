@@ -1,7 +1,6 @@
 package project.buyCar.car.child;
 
-import project.buyCar.car.parent.Car;
-import project.buyCar.enums.enumCar.*;
+import project.buyCar.car.parent.AbstractCar;
 import project.buyCar.enums.enumFord.ColorCarFord;
 import project.buyCar.enums.enumFord.EngineCapacityFord;
 import project.buyCar.enums.enumFord.ModelCarFord;
@@ -9,12 +8,12 @@ import project.buyCar.enums.enumFord.SizeWheelFord;
 
 import java.util.Set;
 
-public class CarFord extends Car {
+public class CarFord extends AbstractCar {
     private final Boolean isThereAHatch;
 
-    public CarFord(Brand brand, ModelCarFord modelCar, ColorCarFord colorCar, EngineCapacityFord engineCapacity,
+    public CarFord(ModelCarFord modelCar, ColorCarFord colorCar, EngineCapacityFord engineCapacity,
                    SizeWheelFord sizeWheel, Integer yearRelease, Set<String> option, Boolean isThereAHatch) {
-        super(brand, modelCar, colorCar, engineCapacity, sizeWheel, yearRelease, option);
+        super (modelCar, colorCar, engineCapacity, sizeWheel, yearRelease, option);
         this.isThereAHatch = isThereAHatch;
     }
 
@@ -24,6 +23,7 @@ public class CarFord extends Car {
 
     @Override
     public String toString() {
-        return super.toString() + ", Hatch: " + getThereAHatch();
+        String BRAND = "Ford";
+        return "Brand: "+ BRAND +  super.toString() + ", Hatch: " + getThereAHatch();
     }
 }

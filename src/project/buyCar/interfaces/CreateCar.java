@@ -1,7 +1,7 @@
 package project.buyCar.interfaces;
 
-import project.buyCar.car.parent.Car;
+import project.buyCar.car.parent.AbstractCar;
 
 public interface CreateCar {
-     abstract Car create(Car car);
+     abstract AbstractCar create(AbstractCar abstractCar);
 }

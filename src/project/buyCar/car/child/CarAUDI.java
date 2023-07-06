@@ -1,17 +1,16 @@
 package project.buyCar.car.child;
 
-import project.buyCar.car.parent.Car;
+import project.buyCar.car.parent.AbstractCar;
 import project.buyCar.enums.enumAUDI.*;
-import project.buyCar.enums.enumCar.Brand;
+
 import java.util.Set;
 
-public class CarAUDI extends Car {
-
+public class CarAUDI extends AbstractCar {
     private final DriveForAUDI driveForAUDI;
 
-    public CarAUDI(Brand brand, ModelCarAUDI modelCar, ColorCarAUDI colorCar, EngineCapacityAUDI engineCapacity,
-                   SizeWheelAUDI sizeWheel, Integer yearRelease, Set<String> option,DriveForAUDI driveForAUDI) {
-        super(brand, modelCar, colorCar, engineCapacity, sizeWheel, yearRelease, option);
+    public CarAUDI(ModelCarAUDI modelCar, ColorCarAUDI colorCar, EngineCapacityAUDI engineCapacity,
+                   SizeWheelAUDI sizeWheel, Integer yearRelease, Set<String> option, DriveForAUDI driveForAUDI) {
+        super(modelCar, colorCar, engineCapacity, sizeWheel, yearRelease, option);
         this.driveForAUDI = driveForAUDI;
     }
 
@@ -21,6 +20,7 @@ public class CarAUDI extends Car {
 
     @Override
     public String toString() {
-        return super.toString() + ", Drive type: " + getDriveForAUDI();
+        String BRAND = "AUDI";
+        return "Brand: "+ BRAND + super.toString() + ", Drive type: " + getDriveForAUDI();
     }
 }
