@@ -1,7 +1,9 @@
 package project.buyCar.interfaces;
 
-import project.buyCar.car.parent.AbstractCar;
+import java.util.Set;
 
-public interface CreateCar {
-     abstract AbstractCar create(AbstractCar abstractCar);
+public interface CreateCar<BRAND> {
+    BRAND create(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar,
+                 SizeWheelCar sizeWheelCar, Set<String> option);
+
 }

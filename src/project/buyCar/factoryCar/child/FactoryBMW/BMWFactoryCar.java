@@ -6,39 +6,30 @@ import project.buyCar.enums.enumBMW.EngineCapacityBMW;
 import project.buyCar.enums.enumBMW.ModelCarBMW;
 import project.buyCar.enums.enumBMW.SizeWheelBMW;
 import project.buyCar.factoryCar.parent.AbstractFactoryCar;
+import project.buyCar.interfaces.ColorCar;
+import project.buyCar.interfaces.EngineCapacityCar;
+import project.buyCar.interfaces.ModelCar;
+import project.buyCar.interfaces.SizeWheelCar;
 
-import java.util.Arrays;
 import java.util.Set;
 
-public class BMWFactoryCar extends AbstractFactoryCar {
+public class BMWFactoryCar extends AbstractFactoryCar<ModelCarBMW,ColorCarBMW,EngineCapacityBMW,SizeWheelBMW,CarBMW> {
 
     final int YEAR_RELEASE = 2022;
-    private final ModelCarBMW[] allModelCarBMW = ModelCarBMW.values();
-    private final ColorCarBMW[] allCoralCarBMW = ColorCarBMW.values();
-    private final EngineCapacityBMW[] allEngineCapacityBMW = EngineCapacityBMW.values();
-    private final SizeWheelBMW[] allSizeWheelBMW = SizeWheelBMW.values();
 
-    public void print() {
-        System.out.printf("""
-                        Welcome to BMW Factory, the following cars are made here:
-                        Available Models: %s
-                        Available colors: %s
-                        Available engine size: %s
-                        Available wheel size: %s
-                        """,
-                Arrays.toString(allModelCarBMW),
-                Arrays.toString(allCoralCarBMW),
-                Arrays.toString(allEngineCapacityBMW),
-                Arrays.toString(allSizeWheelBMW)
-        );
-    }
-    public CarBMW create(ModelCarBMW modelCar, ColorCarBMW colorCar, EngineCapacityBMW engineCapacity,
-                         SizeWheelBMW sizeWheel, Set<String> option) {
-       return new CarBMW(modelCar, colorCar, engineCapacity, sizeWheel, YEAR_RELEASE, option);
+    public BMWFactoryCar(ModelCarBMW[] allModelCar, ColorCarBMW[] allCoralCar,
+                         EngineCapacityBMW[] allEngineCapacity, SizeWheelBMW[] allSizeWheel) {
+        super(allModelCar, allCoralCar, allEngineCapacity, allSizeWheel);
     }
 
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    @Override
+    public CarBMW create(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar, SizeWheelCar sizeWheelCar, Set<String> option) {
+        return new CarBMW((ModelCarBMW) modelCar,(ColorCarBMW) colorCar,(EngineCapacityBMW) engineCapacityCar,
+                (SizeWheelBMW) sizeWheelCar,YEAR_RELEASE,option);
     }
 }

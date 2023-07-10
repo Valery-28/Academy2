@@ -21,9 +21,19 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        AUDIFactoryCar audiFactoryCar = new AUDIFactoryCar();
-        BMWFactoryCar bmwFactoryCar = new BMWFactoryCar();
-        FordFactoryCar fordFactoryCar = new FordFactoryCar();
+        AUDIFactoryCar audiFactoryCar = new AUDIFactoryCar(ModelCarAUDI.values(),ColorCarAUDI.values(),EngineCapacityAUDI.values(),SizeWheelAUDI.values(),DriveForAUDI.values());
+        BMWFactoryCar bmwFactoryCar = new BMWFactoryCar(ModelCarBMW.values(),ColorCarBMW.values(),EngineCapacityBMW.values(),SizeWheelBMW.values());
+        FordFactoryCar fordFactoryCar = new FordFactoryCar(ModelCarFord.values(),ColorCarFord.values(),EngineCapacityFord.values(),SizeWheelFord.values());
+
+
+        System.out.println( audiFactoryCar.getConfigurations());
+        System.out.println(bmwFactoryCar.getConfigurations());
+        System.out.println(fordFactoryCar.getConfigurations());
+
+
+
+
+
         CarAUDI carAUDI = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
                 SizeWheelAUDI.R16, 2022, null, project.buyCar.enums.enumAUDI.DriveForAUDI.FRONT_DRIVE);
         System.out.println(carAUDI);
@@ -35,17 +45,16 @@ public class Main {
                 2022, new HashSet<>(Set.of("Rain sensor")), true);
         System.out.println(carFord);
         System.out.println();
-        audiFactoryCar.print();
+        audiFactoryCar.getConfigurations();
         System.out.println(audiFactoryCar.create(ModelCarAUDI.A6,ColorCarAUDI.GREEN,EngineCapacityAUDI.MIN,SizeWheelAUDI.R19,
-                new HashSet<>(Set.of("Light senor")), DriveForAUDI.REAR_DRIVE));
+                new HashSet<>(Set.of("Light sensor"))));
         System.out.println();
-        bmwFactoryCar.print();
+
         System.out.println(bmwFactoryCar.create(ModelCarBMW.X5, ColorCarBMW.WHITE, EngineCapacityBMW.STANDARD,
                 SizeWheelBMW.R19, null));
         System.out.println();
-        fordFactoryCar.print();
         System.out.println(fordFactoryCar.create(ModelCarFord.FOCUS, ColorCarFord.PURPLE,
                 EngineCapacityFord.STANDARD, SizeWheelFord.R15,
-                new HashSet<>(Set.of("Rain sensor")), true));
+                new HashSet<>(Set.of("Rain sensor"))));
     }
 }

@@ -6,33 +6,23 @@ import project.buyCar.enums.enumFord.EngineCapacityFord;
 import project.buyCar.enums.enumFord.ModelCarFord;
 import project.buyCar.enums.enumFord.SizeWheelFord;
 import project.buyCar.factoryCar.parent.AbstractFactoryCar;
+import project.buyCar.interfaces.ColorCar;
+import project.buyCar.interfaces.EngineCapacityCar;
+import project.buyCar.interfaces.ModelCar;
+import project.buyCar.interfaces.SizeWheelCar;
 
-import java.util.Arrays;
 import java.util.Set;
 
-public class FordFactoryCar extends AbstractFactoryCar {
+public class FordFactoryCar extends AbstractFactoryCar<ModelCarFord,ColorCarFord,EngineCapacityFord ,SizeWheelFord,CarFord> {
     final int YEAR_RELEASE = 2022;
-    private final ModelCarFord[] allModelCarFord = ModelCarFord.values();
-    private final ColorCarFord[] allCoralCarFord = ColorCarFord.values();
-    private final EngineCapacityFord[] allEngineCapacityFord = EngineCapacityFord.values();
-    private final SizeWheelFord[] allSizeWheelFord = SizeWheelFord.values();
-
-    public void print() {
-        System.out.printf("""
-                        Welcome to Ford Factory, the following cars are made here:
-                        Available Models: %s
-                        Available colors: %s
-                        Available engine size: %s
-                        Available wheel size: %s
-                        """,
-                Arrays.toString(allModelCarFord),
-                Arrays.toString(allCoralCarFord),
-                Arrays.toString(allEngineCapacityFord),
-                Arrays.toString(allSizeWheelFord)
-        );
+    public FordFactoryCar(ModelCarFord[] allModelCar, ColorCarFord[] allCoralCar,
+                          EngineCapacityFord[] allEngineCapacity, SizeWheelFord[] allSizeWheel) {
+        super(allModelCar, allCoralCar, allEngineCapacity, allSizeWheel);
     }
-    public CarFord create(ModelCarFord modelCar, ColorCarFord colorCar, EngineCapacityFord engineCapacity,
-                   SizeWheelFord sizeWheel, Set<String> option,Boolean isThereAHatch){
-        return new CarFord(modelCar,colorCar,engineCapacity,sizeWheel,YEAR_RELEASE,option,isThereAHatch);
+
+    @Override
+    public CarFord create(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar, SizeWheelCar sizeWheelCar, Set<String> option) {
+        return new CarFord((ModelCarFord) modelCar,(ColorCarFord) colorCar,(EngineCapacityFord) engineCapacityCar,
+                (SizeWheelFord) sizeWheelCar,YEAR_RELEASE,option,true);
     }
 }
