@@ -12,7 +12,7 @@ import project.buyCar.interfaces.SizeWheelCar;
 import java.util.Arrays;
 import java.util.Set;
 
-public class AUDIFactoryCar extends AbstractFactoryCar<ModelCarAUDI, ColorCarAUDI, EngineCapacityAUDI, SizeWheelAUDI,CarAUDI> {
+public class AUDIFactoryCar extends AbstractFactoryCar<ModelCarAUDI, ColorCarAUDI, EngineCapacityAUDI, SizeWheelAUDI,CarAUDI,DriveForAUDI> {
     final int YEAR_RELEASE = 2022;
     public DriveForAUDI[] allDriveForAUDI;
 
@@ -35,8 +35,9 @@ public class AUDIFactoryCar extends AbstractFactoryCar<ModelCarAUDI, ColorCarAUD
     }
 
     @Override
-    public CarAUDI create(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar, SizeWheelCar sizeWheelCar, Set<String> option) {
+    public CarAUDI create(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar,
+                          SizeWheelCar sizeWheelCar, Set<String> option,DriveForAUDI function) {
         return new CarAUDI((ModelCarAUDI) modelCar,(ColorCarAUDI) colorCar,(EngineCapacityAUDI) engineCapacityCar,
-                (SizeWheelAUDI) sizeWheelCar,YEAR_RELEASE,option,null);
+                (SizeWheelAUDI) sizeWheelCar,YEAR_RELEASE,option,function);
     }
 }

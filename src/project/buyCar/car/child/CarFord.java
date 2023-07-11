@@ -9,15 +9,15 @@ import project.buyCar.enums.enumFord.SizeWheelFord;
 import java.util.Set;
 
 public class CarFord extends AbstractCar {
-    private final Boolean isThereAHatch;
+    private final boolean isThereAHatch;
 
     public CarFord(ModelCarFord modelCar, ColorCarFord colorCar, EngineCapacityFord engineCapacity,
-                   SizeWheelFord sizeWheel, Integer yearRelease, Set<String> option, Boolean isThereAHatch) {
+                   SizeWheelFord sizeWheel, Integer yearRelease, Set<String> option, boolean isThereAHatch) {
         super (modelCar, colorCar, engineCapacity, sizeWheel, yearRelease, option);
         this.isThereAHatch = isThereAHatch;
     }
 
-    public Boolean getThereAHatch() {
+    public boolean getThereAHatch() {
         return isThereAHatch;
     }
 

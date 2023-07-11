@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import static java.lang.String.format;
 
-public abstract class AbstractFactoryCar<MODEL, COLOR, ENGINE, SIZE, BRAND> implements CreateCar<BRAND> {
+public abstract class AbstractFactoryCar<MODEL, COLOR, ENGINE, SIZE, BRAND,FUNCTION> implements CreateCar<BRAND,FUNCTION> {
 
     private final MODEL[] allModelCar;
     private final  COLOR[] allCoralCar;

@@ -13,7 +13,7 @@ import project.buyCar.interfaces.SizeWheelCar;
 
 import java.util.Set;
 
-public class BMWFactoryCar extends AbstractFactoryCar<ModelCarBMW,ColorCarBMW,EngineCapacityBMW,SizeWheelBMW,CarBMW> {
+public class BMWFactoryCar extends AbstractFactoryCar<ModelCarBMW,ColorCarBMW,EngineCapacityBMW,SizeWheelBMW,CarBMW,Integer> {
 
     final int YEAR_RELEASE = 2022;
 
@@ -28,8 +28,9 @@ public class BMWFactoryCar extends AbstractFactoryCar<ModelCarBMW,ColorCarBMW,En
     }
 
     @Override
-    public CarBMW create(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar, SizeWheelCar sizeWheelCar, Set<String> option) {
+    public CarBMW create(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar,
+                         SizeWheelCar sizeWheelCar, Set<String> option,Integer seatingCapacity ) {
         return new CarBMW((ModelCarBMW) modelCar,(ColorCarBMW) colorCar,(EngineCapacityBMW) engineCapacityCar,
-                (SizeWheelBMW) sizeWheelCar,YEAR_RELEASE,option);
+                (SizeWheelBMW) sizeWheelCar,YEAR_RELEASE,option,seatingCapacity);
     }
 }
