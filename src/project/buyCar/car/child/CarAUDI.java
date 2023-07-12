@@ -18,9 +18,10 @@ public class CarAUDI extends AbstractCar {
         return driveForAUDI;
     }
 
+
     @Override
     public String toString() {
         String BRAND = "AUDI";
-        return "Brand: "+ BRAND + super.toString() + ", Drive type: " + getDriveForAUDI();
+        return "Brand: " + BRAND + super.toString() + ", Drive type: " + getDriveForAUDI();
     }
 }
