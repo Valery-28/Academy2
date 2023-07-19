@@ -1,27 +1,24 @@
 package project.buyCar.car.child;
 
+import project.buyCar.additional_function.AdditionalFunctionAUDI;
 import project.buyCar.car.parent.AbstractCar;
 import project.buyCar.enums.enumAUDI.*;
 
 import java.util.Set;
 
 public class CarAUDI extends AbstractCar {
-    private final DriveForAUDI driveForAUDI;
 
     public CarAUDI(ModelCarAUDI modelCar, ColorCarAUDI colorCar, EngineCapacityAUDI engineCapacity,
-                   SizeWheelAUDI sizeWheel, Integer yearRelease, Set<String> option, DriveForAUDI driveForAUDI) {
-        super(modelCar, colorCar, engineCapacity, sizeWheel, yearRelease, option);
-        this.driveForAUDI = driveForAUDI;
-    }
+                   SizeWheelAUDI sizeWheel, Integer yearRelease, Set<String> option,
+                   AdditionalFunctionAUDI additionalFunctionAUDI) {
+        super(modelCar, colorCar, engineCapacity, sizeWheel, yearRelease, option, additionalFunctionAUDI);
 
-    public DriveForAUDI getDriveForAUDI() {
-        return driveForAUDI;
     }
 
 
     @Override
     public String toString() {
         String BRAND = "AUDI";
-        return "Brand: " + BRAND + super.toString() + ", Drive type: " + getDriveForAUDI();
+        return "Brand: " + BRAND + super.toString();
     }
 }

@@ -1,20 +1,16 @@
 package project.buyCar.factoryCar.child.FactoryFord;
 
-import project.buyCar.car.child.CarFord;
-import project.buyCar.enums.enumFord.ColorCarFord;
-import project.buyCar.enums.enumFord.EngineCapacityFord;
-import project.buyCar.enums.enumFord.ModelCarFord;
-import project.buyCar.enums.enumFord.SizeWheelFord;
+import project.buyCar.additional_function.AdditionalFunction;
+import project.buyCar.additional_function.AdditionalFunctionFord;
 import project.buyCar.factoryCar.parent.AbstractFactoryCar;
-import project.buyCar.interfaces.ColorCar;
-import project.buyCar.interfaces.EngineCapacityCar;
-import project.buyCar.interfaces.ModelCar;
-import project.buyCar.interfaces.SizeWheelCar;
+import project.buyCar.car.child.CarFord;
+import project.buyCar.enums.enumFord.*;
+import project.buyCar.interfaces.*;
 
 import java.util.Set;
 
 public class FordFactoryCar extends AbstractFactoryCar<ModelCarFord, ColorCarFord,
-        EngineCapacityFord, SizeWheelFord, CarFord, Boolean> {
+        EngineCapacityFord, SizeWheelFord, CarFord> {
     final int YEAR_RELEASE = 2022;
 
     public FordFactoryCar(ModelCarFord[] allModelCar, ColorCarFord[] allCoralCar,
@@ -24,8 +20,8 @@ public class FordFactoryCar extends AbstractFactoryCar<ModelCarFord, ColorCarFor
 
     @Override
     public CarFord create(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar,
-                          SizeWheelCar sizeWheelCar, Set<String> option, Boolean isThereAHatch) {
+                          SizeWheelCar sizeWheelCar, Set<String> option, AdditionalFunction additionalFunction) {
         return new CarFord((ModelCarFord) modelCar, (ColorCarFord) colorCar, (EngineCapacityFord) engineCapacityCar,
-                (SizeWheelFord) sizeWheelCar, YEAR_RELEASE, option, isThereAHatch);
+                (SizeWheelFord) sizeWheelCar, YEAR_RELEASE, option, (AdditionalFunctionFord) additionalFunction);
     }
 }

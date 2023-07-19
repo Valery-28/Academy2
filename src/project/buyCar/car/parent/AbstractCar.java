@@ -1,6 +1,7 @@
 package project.buyCar.car.parent;
 
 
+import project.buyCar.additional_function.AdditionalFunction;
 import project.buyCar.interfaces.ColorCar;
 import project.buyCar.interfaces.EngineCapacityCar;
 import project.buyCar.interfaces.ModelCar;
@@ -18,16 +19,23 @@ public abstract class AbstractCar {
     private final SizeWheelCar sizeWheelCar;
     private final Integer yearRelease;
     private final Set<String> option;
+    private final AdditionalFunction additionalFunction;
 
 
     public AbstractCar(ModelCar modelCar, ColorCar colorCar, EngineCapacityCar engineCapacityCar,
-                       SizeWheelCar sizeWheelCar, Integer yearRelease, Set<String> option) {
+                       SizeWheelCar sizeWheelCar, Integer yearRelease,
+                       Set<String> option, AdditionalFunction additionalFunction) {
         this.modelCar = modelCar;
         this.colorCar = colorCar;
         this.engineCapacityCar = engineCapacityCar;
         this.sizeWheelCar = sizeWheelCar;
         this.yearRelease = yearRelease;
         this.option = Objects.requireNonNullElseGet(option, () -> new HashSet<>(Set.of()));
+        this.additionalFunction = additionalFunction;
+    }
+
+    public AdditionalFunction getAdditionalFunction() {
+        return additionalFunction;
     }
 
     @Override
@@ -38,7 +46,8 @@ public abstract class AbstractCar {
                         ", Engine size: " + engineCapacityCar +
                         ", Size Wheel: " + sizeWheelCar +
                         ", Year release: " + yearRelease +
-                        ", options: " + option;
+                        ", options: " + option +
+                        ", additional function: " + getAdditionalFunction();
     }
 
     @Override
