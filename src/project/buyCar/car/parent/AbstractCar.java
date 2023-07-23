@@ -14,11 +14,11 @@ import java.util.Set;
 public abstract class AbstractCar {
 
     private final ModelCar modelCar;
-    private final ColorCar colorCar;
+    private  ColorCar colorCar;
     private final EngineCapacityCar engineCapacityCar;
-    private final SizeWheelCar sizeWheelCar;
+    private  SizeWheelCar sizeWheelCar;
     private final Integer yearRelease;
-    private final Set<String> option;
+    private  Set<String> option;
     private final AdditionalFunction additionalFunction;
 
 
@@ -36,6 +36,30 @@ public abstract class AbstractCar {
 
     public AdditionalFunction getAdditionalFunction() {
         return additionalFunction;
+    }
+
+    public void setColorCar(ColorCar colorCar) {
+        this.colorCar = colorCar;
+    }
+
+    public void setSizeWheelCar(SizeWheelCar sizeWheelCar) {
+        this.sizeWheelCar = sizeWheelCar;
+    }
+
+    public void setOption(Set<String> option) {
+        this.option = option;
+    }
+
+    public ColorCar getColorCar() {
+        return colorCar;
+    }
+
+    public SizeWheelCar getSizeWheelCar() {
+        return sizeWheelCar;
+    }
+
+    public Set<String> getOption() {
+        return option;
     }
 
     @Override

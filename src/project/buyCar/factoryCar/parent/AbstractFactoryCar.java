@@ -38,5 +38,7 @@ public abstract class AbstractFactoryCar<MODEL, COLOR, ENGINE, SIZE, BRAND> impl
                 Arrays.toString(allSizeWheel)
         );
     }
+
+    public abstract void fillStorageWithCars();
 }
 
