@@ -7,15 +7,18 @@ import java.util.List;
 
 public class Storage {
     private final List<AbstractCar> storage = new ArrayList<>();
-    public void addStorage(AbstractCar car){
+
+    public void addStorage(AbstractCar car) {
         storage.add(car);
     }
+
     public void getStorage() {
         System.out.println("Stoke:");
         for (AbstractCar cars : storage) {
             System.out.println(cars);
         }
     }
+
     public void findCar(AbstractCar car) {
         AbstractCar resultCar;
         for (AbstractCar stokeCar : storage) {
@@ -32,6 +35,7 @@ public class Storage {
             }
         }
     }
+
     public int getMaxCoefficient(AbstractCar car1, AbstractCar car2) {
         int temp;
         int coefficient = 0;

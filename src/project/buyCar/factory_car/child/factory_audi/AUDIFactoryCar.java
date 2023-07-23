@@ -43,12 +43,12 @@ public class AUDIFactoryCar extends AbstractFactoryCar<ModelCarAUDI, ColorCarAUD
 
     @Override
     public void fillStorageWithCars() {
-        CarAUDI car = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX, SizeWheelAUDI.R17,
+        CarAUDI car = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.GREEN, EngineCapacityAUDI.MAX, SizeWheelAUDI.R18,
                 2022, new HashSet<>(Set.of("Climate control")),
-                new AdditionalFunctionAUDI(true, 8000));
+                new AdditionalFunctionAUDI(false, 8000));
         this.storage.addStorage(car);
         CarAUDI car2 = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
-                SizeWheelAUDI.R16, 2022, new HashSet<>(Set.of("Road control")),
+                SizeWheelAUDI.R16, 2022, new HashSet<>(Set.of("Road control","light sensor")),
                 new AdditionalFunctionAUDI(true, 10000));
         this.storage.addStorage(car2);
     }

@@ -67,8 +67,8 @@ public class Main {
 
         System.out.println();
 
-        System.out.println(audiFactoryCar.create(ModelCarAUDI.A6, ColorCarAUDI.GREEN, EngineCapacityAUDI.MIN, SizeWheelAUDI.R19,
-                new HashSet<>(Set.of("Light sensor")), new AdditionalFunctionAUDI(false, 8000)));
+        System.out.println(audiFactoryCar.create(ModelCarAUDI.A6, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX, SizeWheelAUDI.R16,
+                new HashSet<>(Set.of("Road control")), new AdditionalFunctionAUDI(true, 10000)));
         System.out.println(audiFactoryCar.create(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
                 SizeWheelAUDI.R16, new HashSet<>(Set.of("Road control")), new AdditionalFunctionAUDI(true, 10000)));
         audiFactoryCar.storage.getStorage();
