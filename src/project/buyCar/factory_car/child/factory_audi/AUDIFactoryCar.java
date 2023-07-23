@@ -1,4 +1,4 @@
-package project.buyCar.factoryCar.child.FactoryAUDI;
+package project.buyCar.factory_car.child.factory_audi;
 
 
 import project.buyCar.additional_function.AdditionalFunction;
@@ -8,8 +8,8 @@ import project.buyCar.enums.enumAUDI.ColorCarAUDI;
 import project.buyCar.enums.enumAUDI.EngineCapacityAUDI;
 import project.buyCar.enums.enumAUDI.ModelCarAUDI;
 import project.buyCar.enums.enumAUDI.SizeWheelAUDI;
-import project.buyCar.factoryCar.child.storage.Storage;
-import project.buyCar.factoryCar.parent.AbstractFactoryCar;
+import project.buyCar.factory_car.storage.Storage;
+import project.buyCar.factory_car.parent.AbstractFactoryCar;
 import project.buyCar.interfaces.ColorCar;
 import project.buyCar.interfaces.EngineCapacityCar;
 import project.buyCar.interfaces.ModelCar;

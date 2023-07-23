@@ -1,4 +1,4 @@
-package project.buyCar.factoryCar.parent;
+package project.buyCar.factory_car.parent;
 
 
 import project.buyCar.interfaces.CreateCar;

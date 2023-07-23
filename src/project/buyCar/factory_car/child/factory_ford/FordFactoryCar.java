@@ -1,9 +1,9 @@
-package project.buyCar.factoryCar.child.FactoryFord;
+package project.buyCar.factory_car.child.factory_ford;
 
 import project.buyCar.additional_function.AdditionalFunction;
 import project.buyCar.additional_function.AdditionalFunctionFord;
-import project.buyCar.factoryCar.child.storage.Storage;
-import project.buyCar.factoryCar.parent.AbstractFactoryCar;
+import project.buyCar.factory_car.storage.Storage;
+import project.buyCar.factory_car.parent.AbstractFactoryCar;
 import project.buyCar.car.child.CarFord;
 import project.buyCar.enums.enumFord.*;
 import project.buyCar.interfaces.*;

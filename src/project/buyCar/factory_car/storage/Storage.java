@@ -1,4 +1,4 @@
-package project.buyCar.factoryCar.child.storage;
+package project.buyCar.factory_car.storage;
 
 import project.buyCar.car.child.CarAUDI;
 import project.buyCar.car.child.CarBMW;

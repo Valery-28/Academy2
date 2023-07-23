@@ -18,9 +18,9 @@ import project.buyCar.enums.enumFord.ColorCarFord;
 import project.buyCar.enums.enumFord.EngineCapacityFord;
 import project.buyCar.enums.enumFord.ModelCarFord;
 import project.buyCar.enums.enumFord.SizeWheelFord;
-import project.buyCar.factoryCar.child.FactoryAUDI.AUDIFactoryCar;
-import project.buyCar.factoryCar.child.FactoryBMW.BMWFactoryCar;
-import project.buyCar.factoryCar.child.FactoryFord.FordFactoryCar;
+import project.buyCar.factory_car.child.factory_audi.AUDIFactoryCar;
+import project.buyCar.factory_car.child.factory_bmw.BMWFactoryCar;
+import project.buyCar.factory_car.child.factory_ford.FordFactoryCar;
 
 import java.util.HashSet;
 import java.util.Set;
