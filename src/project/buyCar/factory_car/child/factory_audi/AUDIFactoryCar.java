@@ -21,12 +21,12 @@ import java.util.Set;
 public class AUDIFactoryCar extends AbstractFactoryCar<ModelCarAUDI, ColorCarAUDI,
         EngineCapacityAUDI, SizeWheelAUDI, CarAUDI> {
     public static final int YEAR_RELEASE = 2022;
-    public final Storage storageAUDI;
+    public final Storage storage;
 
     public AUDIFactoryCar(ModelCarAUDI[] allModelCar, ColorCarAUDI[] allCoralCar,
                           EngineCapacityAUDI[] allEngineCapacity, SizeWheelAUDI[] allSizeWheel) {
         super(allModelCar, allCoralCar, allEngineCapacity, allSizeWheel);
-        this.storageAUDI = new Storage();
+        this.storage = new Storage();
         fillStorageWithCars();
     }
 
@@ -37,7 +37,7 @@ public class AUDIFactoryCar extends AbstractFactoryCar<ModelCarAUDI, ColorCarAUD
         CarAUDI car = new CarAUDI((ModelCarAUDI) modelCar, (ColorCarAUDI) colorCar,
                 (EngineCapacityAUDI) engineCapacityCar, (SizeWheelAUDI) sizeWheelCar,
                 YEAR_RELEASE, option, (AdditionalFunctionAUDI) additionalFunction);
-        storageAUDI.findCarAUDI(car);
+        storage.findCar(car);
         return car;
     }
 
@@ -46,10 +46,10 @@ public class AUDIFactoryCar extends AbstractFactoryCar<ModelCarAUDI, ColorCarAUD
         CarAUDI car = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX, SizeWheelAUDI.R17,
                 2022, new HashSet<>(Set.of("Climate control")),
                 new AdditionalFunctionAUDI(true, 8000));
-        this.storageAUDI.addStorageAUDI(car);
+        this.storage.addStorage(car);
         CarAUDI car2 = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
                 SizeWheelAUDI.R16, 2022, new HashSet<>(Set.of("Road control")),
                 new AdditionalFunctionAUDI(true, 10000));
-        this.storageAUDI.addStorageAUDI(car2);
+        this.storage.addStorage(car2);
     }
 }

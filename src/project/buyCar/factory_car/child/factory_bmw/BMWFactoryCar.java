@@ -14,12 +14,12 @@ import java.util.Set;
 public class BMWFactoryCar extends AbstractFactoryCar<ModelCarBMW, ColorCarBMW, EngineCapacityBMW,
         SizeWheelBMW, CarBMW> {
     public static final int YEAR_RELEASE = 2022;
-    public final Storage storageBMW;
+    public final Storage storage;
 
     public BMWFactoryCar(ModelCarBMW[] allModelCar, ColorCarBMW[] allCoralCar,
                          EngineCapacityBMW[] allEngineCapacity, SizeWheelBMW[] allSizeWheel) {
         super(allModelCar, allCoralCar, allEngineCapacity, allSizeWheel);
-        this.storageBMW = new Storage();
+        this.storage = new Storage();
         fillStorageWithCars();
     }
 
@@ -36,7 +36,7 @@ public class BMWFactoryCar extends AbstractFactoryCar<ModelCarBMW, ColorCarBMW, 
                 (EngineCapacityBMW) engineCapacityCar, (SizeWheelBMW) sizeWheelCar,
                 YEAR_RELEASE, option, (AdditionalFunctionBMW) additionalFunction);
 
-        storageBMW.findCarBMW(car);
+        storage.findCar(car);
         return car;
     }
 
@@ -45,11 +45,11 @@ public class BMWFactoryCar extends AbstractFactoryCar<ModelCarBMW, ColorCarBMW, 
         CarBMW car1 = new CarBMW(ModelCarBMW.X1, ColorCarBMW.ORANGE, EngineCapacityBMW.MAX, SizeWheelBMW.R19,
                 2022, new HashSet<>(Set.of("Climate control")),
                 new AdditionalFunctionBMW(3, true));
-        this.storageBMW.addStorageBWM(car1);
+        this.storage.addStorage(car1);
         CarBMW car2 = new CarBMW(ModelCarBMW.X6, ColorCarBMW.WHITE, EngineCapacityBMW.STANDARD,
                 SizeWheelBMW.R19, 2022,
                 new HashSet<>(Set.of("Rain sensor")), new AdditionalFunctionBMW(5, false));
-        this.storageBMW.addStorageBWM(car2);
+        this.storage.addStorage(car2);
 
     }
 }

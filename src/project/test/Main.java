@@ -44,13 +44,13 @@ public class Main {
 
         System.out.println();
         System.out.println("AUDI " + audiFactoryCar.getConfigurations());
-        audiFactoryCar.storageAUDI.getStorageAUDI();
+        audiFactoryCar.storage.getStorage();
         System.out.println();
         System.out.println("BMW " + bmwFactoryCar.getConfigurations());
-        bmwFactoryCar.storageBMW.getStorageBMW();
+        bmwFactoryCar.storage.getStorage();
         System.out.println();
         System.out.println("Ford " + fordFactoryCar.getConfigurations());
-        fordFactoryCar.storageFord.getStorageFord();
+        fordFactoryCar.storage.getStorage();
         System.out.println();
 
         CarAUDI carAUDI = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
@@ -71,16 +71,15 @@ public class Main {
                 new HashSet<>(Set.of("Light sensor")), new AdditionalFunctionAUDI(false, 8000)));
         System.out.println(audiFactoryCar.create(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
                 SizeWheelAUDI.R16, new HashSet<>(Set.of("Road control")), new AdditionalFunctionAUDI(true, 10000)));
+        audiFactoryCar.storage.getStorage();
         System.out.println();
-        audiFactoryCar.storageAUDI.getStorageAUDI();
-        System.out.println();
-
         System.out.println(bmwFactoryCar.create(ModelCarBMW.X5, ColorCarBMW.WHITE, EngineCapacityBMW.STANDARD,
                 SizeWheelBMW.R19, new HashSet<>(Set.of("Rain sensor")), new AdditionalFunctionBMW(5, true)));
         System.out.println();
         System.out.println(fordFactoryCar.create(ModelCarFord.FOCUS, ColorCarFord.PURPLE,
                 EngineCapacityFord.STANDARD, SizeWheelFord.R15,
                 new HashSet<>(Set.of("Rain sensor")), new AdditionalFunctionFord(true)));
+        System.out.println();
 
 
         serviceCarEditColor.editCarColorAUDI(carAUDI, ColorCarAUDI.GREEN);
