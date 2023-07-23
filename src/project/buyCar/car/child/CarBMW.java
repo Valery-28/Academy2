@@ -23,4 +23,5 @@ public class CarBMW extends AbstractCar {
         String BRAND = "BMW";
         return "Brand: " + BRAND + super.toString();
     }
+
 }

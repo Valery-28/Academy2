@@ -8,7 +8,7 @@ import project.buyCar.enums.enumAUDI.ColorCarAUDI;
 import project.buyCar.enums.enumBMW.ColorCarBMW;
 import project.buyCar.enums.enumFord.ColorCarFord;
 
-public class EditColor {
+public class ServiceCarEditColor {
     public void editCarColorAUDI(CarAUDI car, ColorCarAUDI color) {
         if (car != null && color != null && color != car.getColorCar()) {
             car.setColorCar(color);

@@ -33,10 +33,9 @@ public class Storage {
 
     public void getStorageBMW() {
         System.out.println("Stoke BMW:");
-        for (CarBMW carsBMW : storageBMW) {
-            System.out.println(carsBMW);
+        for (CarBMW carBMW:storageBMW) {
+            System.out.println(carBMW);
         }
-
     }
 
     public void getStorageFord() {

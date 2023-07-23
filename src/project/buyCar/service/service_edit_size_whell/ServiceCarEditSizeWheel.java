@@ -8,7 +8,7 @@ import project.buyCar.enums.enumAUDI.SizeWheelAUDI;
 import project.buyCar.enums.enumBMW.SizeWheelBMW;
 import project.buyCar.enums.enumFord.SizeWheelFord;
 
-public class EditSizeWheel {
+public class ServiceCarEditSizeWheel {
     public void changeWheelAUDI(CarAUDI car, SizeWheelAUDI sizeWheel) {
         if (car != null && sizeWheel != null && sizeWheel != car.getSizeWheelCar()) {
             car.setSizeWheelCar(sizeWheel);

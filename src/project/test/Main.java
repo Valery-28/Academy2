@@ -21,6 +21,9 @@ import project.buyCar.enums.enumFord.SizeWheelFord;
 import project.buyCar.factory_car.child.factory_audi.AUDIFactoryCar;
 import project.buyCar.factory_car.child.factory_bmw.BMWFactoryCar;
 import project.buyCar.factory_car.child.factory_ford.FordFactoryCar;
+import project.buyCar.service.service_edit_colar.ServiceCarEditColor;
+import project.buyCar.service.service_edit_option.ServiceCarEditOption;
+import project.buyCar.service.service_edit_size_whell.ServiceCarEditSizeWheel;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -29,7 +32,9 @@ public class Main {
 
 
     public static void main(String[] args) {
-
+        ServiceCarEditColor serviceCarEditColor = new ServiceCarEditColor();
+        ServiceCarEditOption serviceCarEditOption = new ServiceCarEditOption();
+        ServiceCarEditSizeWheel serviceCarEditSizeWheel = new ServiceCarEditSizeWheel();
         AUDIFactoryCar audiFactoryCar = new AUDIFactoryCar(ModelCarAUDI.values(), ColorCarAUDI.values(),
                 EngineCapacityAUDI.values(), SizeWheelAUDI.values());
         BMWFactoryCar bmwFactoryCar = new BMWFactoryCar(ModelCarBMW.values(), ColorCarBMW.values(),
@@ -76,5 +81,30 @@ public class Main {
         System.out.println(fordFactoryCar.create(ModelCarFord.FOCUS, ColorCarFord.PURPLE,
                 EngineCapacityFord.STANDARD, SizeWheelFord.R15,
                 new HashSet<>(Set.of("Rain sensor")), new AdditionalFunctionFord(true)));
+
+
+        serviceCarEditColor.editCarColorAUDI(carAUDI, ColorCarAUDI.GREEN);
+        serviceCarEditSizeWheel.changeWheelAUDI(carAUDI,SizeWheelAUDI.R19);
+        serviceCarEditOption.addOptionAUDI(carAUDI, "Climate control");
+        serviceCarEditOption.deleteOptionAUDI(carAUDI,"Road control");
+        serviceCarEditOption.setOptionsAUDI(carAUDI,new HashSet<>(Set.of("Light Sensor")));
+        System.out.println(carAUDI);
+
+
+        serviceCarEditColor.editCarColorBMW(carBMW, ColorCarBMW.ORANGE);
+        serviceCarEditSizeWheel.changeWheelBMW(carBMW,SizeWheelBMW.R18);
+        serviceCarEditOption.addOptionBMW(carBMW,"Light sensor");
+        serviceCarEditOption.deleteOptionBMW(carBMW,"Climate control");
+        serviceCarEditOption.setOptionsBMW(carBMW,new HashSet<>(Set.of("Road Sensor")));
+        System.out.println(carBMW);
+
+
+        serviceCarEditColor.editCarColorFord(carFord, ColorCarFord.PURPLE);
+        serviceCarEditSizeWheel.changeWheelFord(carFord,SizeWheelFord.R14);
+        serviceCarEditOption.addOptionFord(carFord,"Light sensor");
+        serviceCarEditOption.deleteOptionFord(carFord,"Climate control");
+        serviceCarEditOption.setOptionsFord(carFord,new HashSet<>(Set.of("Road Sensor")));
+        System.out.println(carFord);
+        System.out.println();
     }
 }
