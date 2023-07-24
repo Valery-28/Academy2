@@ -9,19 +9,19 @@ import project.buyCar.enums.enumBMW.ColorCarBMW;
 import project.buyCar.enums.enumFord.ColorCarFord;
 
 public class ServiceCarEditColor {
-    public void editCarColorAUDI(CarAUDI car, ColorCarAUDI color) {
+    public void editCarColor(CarAUDI car, ColorCarAUDI color) {
         if (car != null && color != null && color != car.getColorCar()) {
             car.setColorCar(color);
         }
     }
 
-    public void editCarColorBMW(CarBMW car, ColorCarBMW color) {
+    public void editCarColor(CarBMW car, ColorCarBMW color) {
         if (car != null && color != null && color != car.getColorCar()) {
             car.setColorCar(color);
         }
     }
 
-    public void editCarColorFord(CarFord car, ColorCarFord color) {
+    public void editCarColor(CarFord car, ColorCarFord color) {
         if (car != null && color != null && color != car.getColorCar()) {
             car.setColorCar(color);
         }

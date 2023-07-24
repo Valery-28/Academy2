@@ -8,47 +8,47 @@ import project.buyCar.car.child.CarFord;
 import java.util.Set;
 
 public class ServiceCarEditOption {
-    public void addOptionAUDI(CarAUDI car, String option) {
+    public void addOption(CarAUDI car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().add(option);
         }
     }
-    public void addOptionBMW(CarBMW car, String option) {
+    public void addOption(CarBMW car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().add(option);
         }
     }
-    public void addOptionFord(CarFord car, String option) {
+    public void addOption(CarFord car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().add(option);
         }
     }
-    public void deleteOptionAUDI(CarAUDI car, String option) {
+    public void deleteOption(CarAUDI car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().remove(option);
         }
     }
-    public void deleteOptionBMW(CarBMW car, String option) {
+    public void deleteOption(CarBMW car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().remove(option);
         }
     }
-    public void deleteOptionFord(CarFord car, String option) {
+    public void deleteOption(CarFord car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().remove(option);
         }
     }
-    public void setOptionsAUDI(CarAUDI car, Set<String> option) {
+    public void setOptions(CarAUDI car, Set<String> option) {
         if (car != null && car.getOption() != null) {
             car.setOption(option);
         }
     }
-    public void setOptionsBMW(CarBMW car, Set<String> option) {
+    public void setOptions(CarBMW car, Set<String> option) {
         if (car != null && car.getOption() != null) {
             car.setOption(option);
         }
     }
-    public void setOptionsFord(CarFord car, Set<String> option) {
+    public void setOptions(CarFord car, Set<String> option) {
         if (car != null && car.getOption() != null) {
             car.setOption(option);
         }

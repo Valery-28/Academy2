@@ -47,9 +47,12 @@ public class AUDIFactoryCar extends AbstractFactoryCar<ModelCarAUDI, ColorCarAUD
                 2022, new HashSet<>(Set.of("Climate control")),
                 new AdditionalFunctionAUDI(false, 8000));
         this.storage.addStorage(car);
-        CarAUDI car2 = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
+        CarAUDI car2 = new CarAUDI(ModelCarAUDI.A5, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
                 SizeWheelAUDI.R16, 2022, new HashSet<>(Set.of("Road control","light sensor")),
                 new AdditionalFunctionAUDI(true, 10000));
         this.storage.addStorage(car2);
+        CarAUDI car3 = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX, SizeWheelAUDI.R16,2022,
+                new HashSet<>(Set.of("Road control")), new AdditionalFunctionAUDI(true, 10000));
+        this.storage.addStorage(car3);
     }
 }

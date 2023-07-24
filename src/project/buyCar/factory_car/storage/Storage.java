@@ -37,9 +37,8 @@ public class Storage {
     }
 
     public int getMaxCoefficient(AbstractCar car1, AbstractCar car2) {
-        int temp;
+        int temp = CalculateCoefficient(car1, car2);
         int coefficient = 0;
-        temp = CalculateCoefficient(car1, car2);
         if (temp >= coefficient) {
             coefficient = temp;
             return coefficient;

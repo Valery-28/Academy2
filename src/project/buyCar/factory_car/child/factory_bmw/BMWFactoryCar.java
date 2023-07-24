@@ -42,7 +42,7 @@ public class BMWFactoryCar extends AbstractFactoryCar<ModelCarBMW, ColorCarBMW, 
 
     @Override
     public void fillStorageWithCars() {
-        CarBMW car1 = new CarBMW(ModelCarBMW.X1, ColorCarBMW.ORANGE, EngineCapacityBMW.MAX, SizeWheelBMW.R19,
+        CarBMW car1 = new CarBMW(ModelCarBMW.X5, ColorCarBMW.ORANGE, EngineCapacityBMW.MAX, SizeWheelBMW.R19,
                 2022, new HashSet<>(Set.of("Climate control")),
                 new AdditionalFunctionBMW(3, true));
         this.storage.addStorage(car1);
