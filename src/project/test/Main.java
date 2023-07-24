@@ -30,9 +30,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Main {
-
-
     public static void main(String[] args) {
+
         ServiceCarEditColor serviceCarEditColor = new ServiceCarEditColor();
         ServiceCarEditOption serviceCarEditOption = new ServiceCarEditOption();
         ServiceCarEditSizeWheel serviceCarEditSizeWheel = new ServiceCarEditSizeWheel();
@@ -55,6 +54,7 @@ public class Main {
         System.out.println("Ford " + fordFactoryCar.getConfigurations());
         fordFactoryCar.storage.getStorage();
         System.out.println();
+
         System.out.println("Создание объектов Car");
         CarAUDI carAUDI = new CarAUDI(ModelCarAUDI.A7, ColorCarAUDI.BLACK, EngineCapacityAUDI.MAX,
                 SizeWheelAUDI.R16, 2022, new HashSet<>(Set.of("Road control")),
