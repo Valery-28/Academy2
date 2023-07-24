@@ -13,41 +13,49 @@ public class ServiceCarEditOption {
             car.getOption().add(option);
         }
     }
+
     public void addOption(CarBMW car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().add(option);
         }
     }
+
     public void addOption(CarFord car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().add(option);
         }
     }
+
     public void deleteOption(CarAUDI car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().remove(option);
         }
     }
+
     public void deleteOption(CarBMW car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().remove(option);
         }
     }
+
     public void deleteOption(CarFord car, String option) {
         if (car != null && car.getOption() != null) {
             car.getOption().remove(option);
         }
     }
+
     public void setOptions(CarAUDI car, Set<String> option) {
         if (car != null && car.getOption() != null) {
             car.setOption(option);
         }
     }
+
     public void setOptions(CarBMW car, Set<String> option) {
         if (car != null && car.getOption() != null) {
             car.setOption(option);
         }
     }
+
     public void setOptions(CarFord car, Set<String> option) {
         if (car != null && car.getOption() != null) {
             car.setOption(option);

@@ -29,16 +29,16 @@ import java.util.Set;
 public class ShowRoom {
     private final AUDIFactoryCar audiFactoryCar;
     private final BMWFactoryCar bmwFactoryCar;
-    private  final FordFactoryCar fordFactoryCar;
+    private final FordFactoryCar fordFactoryCar;
     private final ServiceCarEditColor serviceCarEditColor;
     private final ServiceCarEditSizeWheel serviceCarEditSizeWheel;
-    private  final ServiceCarEditOption serviceCarEditOption;
+    private final ServiceCarEditOption serviceCarEditOption;
 
-    public ShowRoom(AUDIFactoryCar audiFactoryCar,BMWFactoryCar bmwFactoryCar,FordFactoryCar fordFactoryCar,
+    public ShowRoom(AUDIFactoryCar audiFactoryCar, BMWFactoryCar bmwFactoryCar, FordFactoryCar fordFactoryCar,
                     ServiceCarEditColor serviceCarEditColor,
                     ServiceCarEditSizeWheel serviceCarEditSizeWheel, ServiceCarEditOption serviceCarEditOption) {
-        this.audiFactoryCar= audiFactoryCar;
-        this.bmwFactoryCar= bmwFactoryCar;
+        this.audiFactoryCar = audiFactoryCar;
+        this.bmwFactoryCar = bmwFactoryCar;
         this.fordFactoryCar = fordFactoryCar;
         this.serviceCarEditColor = serviceCarEditColor;
         this.serviceCarEditSizeWheel = serviceCarEditSizeWheel;
@@ -46,29 +46,31 @@ public class ShowRoom {
     }
 
     public CarAUDI sellCar(ModelCarAUDI modelCar, ColorCarAUDI colorCar, EngineCapacityAUDI engineCapacityCar,
-                           SizeWheelAUDI sizeWheelCar, Set<String>option, AdditionalFunction additionalFunction) {
+                           SizeWheelAUDI sizeWheelCar, Set<String> option, AdditionalFunction additionalFunction) {
 
-        return audiFactoryCar.create(modelCar,colorCar,engineCapacityCar,sizeWheelCar,option, additionalFunction);
+        return audiFactoryCar.create(modelCar, colorCar, engineCapacityCar, sizeWheelCar, option, additionalFunction);
     }
 
     public CarBMW sellCar(ModelCarBMW modelCar, ColorCarBMW colorCar, EngineCapacityBMW engineCapacityCar,
-                           SizeWheelBMW sizeWheelCar, Set<String>option, AdditionalFunction additionalFunction) {
+                          SizeWheelBMW sizeWheelCar, Set<String> option, AdditionalFunction additionalFunction) {
 
-        return bmwFactoryCar.create(modelCar,colorCar,engineCapacityCar,sizeWheelCar,option, additionalFunction);
+        return bmwFactoryCar.create(modelCar, colorCar, engineCapacityCar, sizeWheelCar, option, additionalFunction);
     }
 
     public CarFord sellCar(ModelCarFord modelCar, ColorCarFord colorCar, EngineCapacityFord engineCapacityCar,
-                           SizeWheelFord sizeWheelCar, Set<String>option, AdditionalFunction additionalFunction) {
+                           SizeWheelFord sizeWheelCar, Set<String> option, AdditionalFunction additionalFunction) {
 
-        return fordFactoryCar.create(modelCar,colorCar,engineCapacityCar,sizeWheelCar,option, additionalFunction);
+        return fordFactoryCar.create(modelCar, colorCar, engineCapacityCar, sizeWheelCar, option, additionalFunction);
     }
 
     public void SalonEditColor(CarAUDI car, ColorCarAUDI colorCarAUDI) {
         serviceCarEditColor.editCarColor(car, colorCarAUDI);
     }
+
     public void SalonEditColor(CarBMW car, ColorCarBMW colorCarBMW) {
         serviceCarEditColor.editCarColor(car, colorCarBMW);
     }
+
     public void SalonEditColor(CarFord car, ColorCarFord colorCarFord) {
         serviceCarEditColor.editCarColor(car, colorCarFord);
     }
@@ -76,36 +78,47 @@ public class ShowRoom {
     public void SalonEditSizeWheel(CarAUDI car, SizeWheelAUDI sizeWheel) {
         serviceCarEditSizeWheel.changeWheel(car, sizeWheel);
     }
+
     public void SalonEditSizeWheel(CarBMW car, SizeWheelBMW sizeWheel) {
         serviceCarEditSizeWheel.changeWheel(car, sizeWheel);
     }
+
     public void SalonEditSizeWheel(CarFord car, SizeWheelFord sizeWheel) {
         serviceCarEditSizeWheel.changeWheel(car, sizeWheel);
     }
+
     public void SalonAddOption(CarAUDI car, String option) {
-        serviceCarEditOption.addOption(car,option);
+        serviceCarEditOption.addOption(car, option);
     }
+
     public void SalonAddOption(CarBMW car, String option) {
-        serviceCarEditOption.addOption(car,option);
+        serviceCarEditOption.addOption(car, option);
     }
+
     public void SalonAddOption(CarFord car, String option) {
-        serviceCarEditOption.addOption(car,option);
+        serviceCarEditOption.addOption(car, option);
     }
+
     public void SalonDeleteOption(CarAUDI car, String option) {
-        serviceCarEditOption.deleteOption(car,option);
+        serviceCarEditOption.deleteOption(car, option);
     }
+
     public void SalonDeleteOption(CarBMW car, String option) {
-        serviceCarEditOption.deleteOption(car,option);
+        serviceCarEditOption.deleteOption(car, option);
     }
+
     public void SalonDeleteOption(CarFord car, String option) {
         serviceCarEditOption.deleteOption(car, option);
     }
-        public void SalonSetOptions(CarAUDI car, Set<String> option) {
+
+    public void SalonSetOptions(CarAUDI car, Set<String> option) {
         serviceCarEditOption.setOptions(car, option);
     }
+
     public void SalonSetOptions(CarBMW car, Set<String> option) {
         serviceCarEditOption.setOptions(car, option);
     }
+
     public void SalonSetOptions(CarFord car, Set<String> option) {
         serviceCarEditOption.setOptions(car, option);
     }

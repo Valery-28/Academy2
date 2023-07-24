@@ -110,30 +110,30 @@ public class Main {
         CarBMW car1 = showRoom.sellCar(ModelCarBMW.X5, ColorCarBMW.WHITE,
                 EngineCapacityBMW.MAX, SizeWheelBMW.R19, new HashSet<>(Set.of("Rain sensor")),
                 new AdditionalFunctionBMW(5, true));
-        showRoom.SalonEditColor(car1,ColorCarBMW.ORANGE);
-        showRoom.SalonAddOption(car1,"Light sensor");
+        showRoom.SalonEditColor(car1, ColorCarBMW.ORANGE);
+        showRoom.SalonAddOption(car1, "Light sensor");
         showRoom.SalonDeleteOption(car1, "Rain sensor");
-        showRoom.SalonSetOptions(car1,Set.of("Light sensor, Road control"));
+        showRoom.SalonSetOptions(car1, Set.of("Light sensor, Road control"));
         showRoom.SalonEditSizeWheel(car1, SizeWheelBMW.R20);
         System.out.println(car1);
 
         CarAUDI car2 = showRoom.sellCar(ModelCarAUDI.A4, ColorCarAUDI.GREEN,
                 EngineCapacityAUDI.MAX, SizeWheelAUDI.R19, new HashSet<>(Set.of("Light sensor")),
                 new AdditionalFunctionAUDI(true, 8000));
-        showRoom.SalonEditColor(car2,ColorCarAUDI.BLACK);
-        showRoom.SalonAddOption(car2,"Light sensor");
+        showRoom.SalonEditColor(car2, ColorCarAUDI.BLACK);
+        showRoom.SalonAddOption(car2, "Light sensor");
         showRoom.SalonDeleteOption(car2, "Rain sensor");
-        showRoom.SalonSetOptions(car2,Set.of("Light sensor, Road control"));
+        showRoom.SalonSetOptions(car2, Set.of("Light sensor, Road control"));
         showRoom.SalonEditSizeWheel(car2, SizeWheelAUDI.R18);
         System.out.println(car2);
 
         CarFord car3 = showRoom.sellCar(ModelCarFord.ESCALATE, ColorCarFord.RED,
                 EngineCapacityFord.MAX, SizeWheelFord.R16, new HashSet<>(Set.of("Climate control")),
                 new AdditionalFunctionFord(true));
-        showRoom.SalonEditColor(car3,ColorCarFord.PURPLE);
-        showRoom.SalonAddOption(car3,"Light sensor");
+        showRoom.SalonEditColor(car3, ColorCarFord.PURPLE);
+        showRoom.SalonAddOption(car3, "Light sensor");
         showRoom.SalonDeleteOption(car3, "Rain sensor");
-        showRoom.SalonSetOptions(car3,Set.of("Light sensor, Road control"));
+        showRoom.SalonSetOptions(car3, Set.of("Light sensor, Road control"));
         showRoom.SalonEditSizeWheel(car3, SizeWheelFord.R17);
         System.out.println(car3);
         System.out.println();

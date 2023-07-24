@@ -14,11 +14,13 @@ public class ServiceCarEditSizeWheel {
             car.setSizeWheelCar(sizeWheel);
         }
     }
+
     public void changeWheel(CarBMW car, SizeWheelBMW sizeWheel) {
         if (car != null && sizeWheel != null && sizeWheel != car.getSizeWheelCar()) {
             car.setSizeWheelCar(sizeWheel);
         }
     }
+
     public void changeWheel(CarFord car, SizeWheelFord sizeWheel) {
         if (car != null && sizeWheel != null && sizeWheel != car.getSizeWheelCar()) {
             car.setSizeWheelCar(sizeWheel);

@@ -14,11 +14,11 @@ import java.util.Set;
 public abstract class AbstractCar {
 
     private final ModelCar modelCar;
-    private  ColorCar colorCar;
+    private ColorCar colorCar;
     private final EngineCapacityCar engineCapacityCar;
-    private  SizeWheelCar sizeWheelCar;
+    private SizeWheelCar sizeWheelCar;
     private final Integer yearRelease;
-    private  Set<String> option;
+    private Set<String> option;
     private final AdditionalFunction additionalFunction;
 
 
